@@ -11,7 +11,6 @@
             if(is_dir('images')){
                 // Guaradr en una variable el nombre y el nommbre temporal
                 $nameArchivo = $archivos['name'];
-                $tipoArchivo = $archivos['type'];
                 $nameTemps = $archivos['tmp_name'];
 
                 // Guaradr la imagen en la carpeta img
@@ -26,7 +25,7 @@
                 $navegador = $_SERVER['HTTP_USER_AGENT'];
                 $templateInsertLog = 'Log Date => '.date('l jS \of F Y ') ."\n"
                 ."-----------------------------------------------------" ."\n"
-                . ' Ip maquina subida de archivo => '.$ip ."\n"
+                . 'Ip Servidor => '.$ip ."\n"
                 .' HTTP_USER_AGENT is => '.$navegador ."\n"
                 .' File Update is => '.$nameArchivo ."\n"
                 .' Date Update File => '. date('l jS \of F Y h:i:s A') ."\n"
@@ -36,13 +35,10 @@
             mkdir('./images',0777);
             // Guaradr en una variable el nombre y el nommbre temporal
                 $nameArchivo = $archivos['name'];
-                $tipoArchivo = $archivos['type'];
                 $nameTemps = $archivos['tmp_name'];
 
                 // Guaradr la imagen en la carpeta img
                     move_uploaded_file($nameTemps,'./images/'.$nameArchivo);
-                    // header('Refresh: 5s; URL=update_file.php');
-                    // echo 'Imagen Subida correctamente';
                     header('Location: http://localhost/file_update/');
                 //Insertar ip y sistema de navegador
                 $fichero = fopen('log.txt', 'a+');
@@ -51,7 +47,7 @@
                 $navegador = $_SERVER['HTTP_USER_AGENT'];
                 $templateInsertLog = 'Log Date => '.date('l jS \of F Y ') ."\n"
                 ."-----------------------------------------------------" ."\n"
-                . ' Ip maquina subida de archivo => '.$ip ."\n"
+                . 'Ip Servidor => '.$ip ."\n"
                 .' HTTP_USER_AGENT is => '.$navegador ."\n"
                 .' File Update is => '.$nameArchivo ."\n"
                 .' Date Update File => '. date('l jS \of F Y h:i:s A') ."\n"
