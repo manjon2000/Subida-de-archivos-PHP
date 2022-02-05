@@ -26,6 +26,7 @@
                 .' Date Update File => '. date('l jS \of F Y h:i:s A') ."\n"
                 ."-----------------------------------------------------"."\n";
                 fwrite($fichero, $templateInsertLog);
+                fclose($fichero);
         }else{
             mkdir('./images',0777);
             // Guaradr en una variable el nombre y el nommbre temporal
@@ -47,6 +48,7 @@
                 .' Date Update File => '. date('l jS \of F Y h:i:s A') ."\n"
                 ."-----------------------------------------------------"."\n";
                 fwrite($fichero, $templateInsertLog);
+                fclose($fichero);
         }
         }else{
             echo 'No se admiten archivos .php por seguridad';
