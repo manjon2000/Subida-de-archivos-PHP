@@ -1,8 +1,6 @@
 <?php
     $archivos = $_FILES['subirArchivo'];
     $tipo = $archivos['type'];
-
-
     // Validar que es una imagen
     if($tipo === 'image/jpeg' || $tipo === 'image/png' || $tipo === 'image/gif'){
         // Validar que no incluya extencion .php
@@ -12,11 +10,8 @@
                 // Guaradr en una variable el nombre y el nommbre temporal
                 $nameArchivo = $archivos['name'];
                 $nameTemps = $archivos['tmp_name'];
-
                 // Guaradr la imagen en la carpeta img
                     move_uploaded_file($nameTemps,'./images/'.$nameArchivo);
-                    // header('Refresh: 5s; URL=update_file.php');
-                    // echo 'Imagen Subida correctamente';
                     header('Location: http://localhost/file_update/');
                 //Insertar ip y sistema de navegador
                 $fichero = fopen('log.txt', 'a+');
@@ -36,7 +31,6 @@
             // Guaradr en una variable el nombre y el nommbre temporal
                 $nameArchivo = $archivos['name'];
                 $nameTemps = $archivos['tmp_name'];
-
                 // Guaradr la imagen en la carpeta img
                     move_uploaded_file($nameTemps,'./images/'.$nameArchivo);
                     header('Location: http://localhost/file_update/');
@@ -62,4 +56,5 @@
         
     }else{
         echo '<h1>Suba una imagen con las extenciones .jpg, .png, .gif.</h1>';
+        die();
     }
