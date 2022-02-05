@@ -29,7 +29,6 @@
             <input type="submit" value="UPDATE">
         </form>
     </main>
-    <script src="js.js"></script>
 </body>
 
 </html>
