@@ -22,7 +22,7 @@
                         <?php echo "<img class='img-file-update' src='images/$img' width='320' height='320' />"; ?>
                     </div>
                 <?php endif; ?>
-            <?php endwhile; ?>
+            <?php endwhile; fclose($folder); ?>
         </section>
         <form class="form_update_file" action="update.php" method="POST" enctype="multipart/form-data">
             <input type="file" id="value_image" name="subirArchivo">
